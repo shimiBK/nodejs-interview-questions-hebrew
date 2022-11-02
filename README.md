@@ -38,3 +38,49 @@
 
 ת. זוהי פונקציה שנקראת לאחר ביצוע משימה מסויימת , היא מאפשרת לקוד אחר לרוץ במקביל והיא מונעת חסימה. בהיותה פלטפורמה אסינכרונית נוד מסתמכת מאוד על פונקציות Callback . כל הAPIs של נוד נתמכות ע"י פונקציות Callbacks
 
+## ש. הסבר מהו Promise ? 
+
+ת.Promise מייצג השלמה ( Completion ) או כשלון של פעולה אסינכרונית ואת הערך המתקבל ממנה.
+
+לPromise יש שלושה מצבים :
+
+* ממתין (pending) - זהו המצב ההתחלתי , הפרומיס לא קוים (fulfilled) ולא נדחה (rejected)
+* קוים (fulfilled) -  משמעותו שהפעולה התבצעה בהצלחה
+* נדחה (rejected) -  משמעותו שהפעולה נכשלה.
+
+נראה דוגמה פשוטה : 
+
+
+```
+var promise = new Promise(function(resolve, reject) {
+  const x = "nodejsinterviewquestions";
+  const y = "nodejsinterviewquestions"
+  if(x === y) {
+    resolve();
+  } else {
+    reject();
+  }
+});
+   
+promise.
+    then(function () {
+        console.log('Success');
+    }).
+    catch(function () {
+        console.log('Some error has occurred');
+    });
+
+
+```
+1.Promises משמשים לטיפול אסניכרוני בevents.
+2.Promises משמשים לטיפול בבקשות Http אסינכרוניות
+
+
+## ש. מהו Callback Hell ?
+
+ת. מספר Callbacks מקוננים אחד מתחת לשני אשר יוצרים צורה של פירמידה , כל Callback תלוי/מחכה לCallback הקודם מה שגורם ליצרת פירמידה , כאמור דבר המקשה על קריאות הקוד והיכולת לתחזק אותו.
+
+## ש. מה היתרון של Promise על Callback ? 
+
+Promise יכול להתמודד עם מספר פעולות אסינכרוניות בקלות , כמו כן הוא מספק טיפול טוב יותר בשגיאות (error handling). בשימוש בPromise אנחנו בעצם נמנעים מהCallback Hell.
+
