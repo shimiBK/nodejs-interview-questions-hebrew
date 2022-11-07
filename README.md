@@ -219,3 +219,69 @@ fs.readFile(file, ErrorFirstCallback);
 <br>
 
 
+## ש. מהם מודולי הליבה של Node.js?
+
+<div align="center">
+
+| מודול | תיאור |
+| --- | ----------- |
+| assert | מספק סט של assertion functions שימושיים לטסטים |
+|  console | מספק קונסול דיבאגינג פשוט. |
+|  crypto | מספק פונקציונליות קריפטוגרפית |
+|  http | מכיל מחלקות שיטות ואירועים כדי ליצור שרת http |
+|  url | כולל שיטות לרזולציות ופירסור ( parsing ) עבור URL. |
+|  querystring | שיטות לטפל ב query string |
+|  path | שיטות להתמודדות עם נתיבי קבצים |
+|  fs | מחלקות שיטות ואירועים לעבודה עם file IO |
+| util |  כולל פונקציות שירות שימושיות למפתחים |
+
+</div>
+
+
+## ש.מהו הEvent Emitter ? 
+הEventEmitter הוא מחלקה שמקלה על אינטרקציה/תקשורת בין אובייקטים ב NODE.JS , המחלקה יכולה לשמש כדי ליצור ולטפל באירועים מותאמים אישית.
+הEventEmitter  הוא הליבה של הארכיטקטורה האסינכרונית מוכוונת אירועים של NODE . רבים מהמודולים המובנים של NODE יורשים ממנו כולל ספריות בולטות כמו Express. לאובייקט Emitter יש שני פי'צרים עיקריים :
+* "פולט (Emitting) – שמות של אירועים .
+* רישום וביטול רישם של listening functions.
+
+```
+
+
+/**
+ * Callback Events with Parameters
+ */
+const events = require('events');
+const eventEmitter = new events.EventEmitter();
+
+function listener(code, msg) {
+   console.log(`status ${code} and ${msg}`);
+}
+
+eventEmitter.on('status', listener); // Register listener
+eventEmitter.emit('status', 200, 'ok');
+
+// Output
+status 200 and ok
+
+
+```
+
+
+## ש. מהן שיטות הEventEmitter הקיימות בNode.js ?
+
+<div align="center">
+
+| שיטה | תיאור |
+| --- | ----------- |
+| .addListener(event,listener) | מוסיף listener לסוף המערך של הlisteners עבור האירוע המסויים |
+|  .on(event,listener) | משמש להוספת פונקציית Callback שתבוצע בעת הפעלת האירוע |
+|  .once(event, listener) | הlistener מופעל רק בפעם הבאה שהאירוע מופעל ולאחר מכן הוא נמחק |
+| .removeListener(event, listener) | הסרת הlistener ממערך הListeners עבור האירוע המסויים |
+|  .removeAllListeners([event])	 | מסיר את כל הlisteners או את אלה המצויינים  |
+|  .setMaxListeners(n)	 | שיטות לטפל ב query string |
+|  .getMaxListeners() | שיטות להתמודדות עם נתיבי קבצים |
+|  .listeners(event)	 | מחלקות שיטות ואירועים לעבודה עם file IO |
+| .emit(event[, arg1][, arg2][, ...]) |  כולל פונקציות שירות שימושיות למפתחים |
+| .listenerCount(type)	 |  כולל פונקציות שירות שימושיות למפתחים |
+
+</div>
