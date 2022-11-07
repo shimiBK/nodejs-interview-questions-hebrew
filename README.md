@@ -278,10 +278,10 @@ status 200 and ok
 |  .once(event, listener) | הlistener מופעל רק בפעם הבאה שהאירוע מופעל ולאחר מכן הוא נמחק |
 | .removeListener(event, listener) | הסרת הlistener ממערך הListeners עבור האירוע המסויים |
 |  .removeAllListeners([event])	 | מסיר את כל הlisteners או את אלה המצויינים  |
-|  .setMaxListeners(n)	 | שיטות לטפל ב query string |
-|  .getMaxListeners() | שיטות להתמודדות עם נתיבי קבצים |
-|  .listeners(event)	 | מחלקות שיטות ואירועים לעבודה עם file IO |
-| .emit(event[, arg1][, arg2][, ...]) |  כולל פונקציות שירות שימושיות למפתחים |
-| .listenerCount(type)	 |  כולל פונקציות שירות שימושיות למפתחים |
+|  .setMaxListeners(n)	 | באופן דיפולטיבי הEventEmitters ידפיסו שגיאה עבור יותר מ10 listeners עבור אירוע מסויים |
+|  .getMaxListeners() | מחזיר את הערך המקסימלי הנוכחי של הemitter שנקבע ע"י emitter.setMaxListeners(n) או את הערך הדיפולטיבי |
+|  .listeners(event)	 | מחזיר עותק של מערך הlisteners עבור אירוע מסויים |
+| .emit(eventName[, arg1][, arg2][, ...]) |  קורא באופן סינכרוני לכל הlisteners שרושמים לeventName בסדר שבו הם נרשמו ומעביר להם את הארגומנטים המסופקים |
+| .listenerCount(type)	 |  מחזיר את מספר הlisteners שמאזינים לסוג האירועץ |
 
 </div>
