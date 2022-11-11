@@ -61,7 +61,7 @@
 ניתן לבדוק את הגרסה של npm כך :
 
 
-```
+```js
 
 npm --version
 
@@ -69,7 +69,7 @@ npm --version
 
 על מנת להתקין חבילה נשתמש בפקודה הבאה :
 
-```
+```js
 
 npm install <Module Name>
 
@@ -110,7 +110,7 @@ npm install <Module Name>
 נראה דוגמה פשוטה : 
 
 
-```
+```js
 var promise = new Promise(function(resolve, reject) {
   const x = "nodejsinterviewquestions";
   const y = "nodejsinterviewquestions"
@@ -191,7 +191,7 @@ promise.
 פונקציה שהארגומנט הראשון שלה הוא אוייבקט השגיאה , אובייקט זה מוחזר כאשר מתרחשת שגיאה בעת ביצוע הפונקציה , והארגומנט השני שלה הוא הדאטה שתוחזר במידה ולא מתרחשת שגיאה , במצב זה אוייבקט השגיאה מאותחל לNULL.
 
 בדוגמה הבאה נקבל שגיאה : 
-```
+```js
 
 // נשתמש במודול הfs 
 const fs = require("fs");
@@ -213,7 +213,7 @@ fs.readFile(file, ErrorFirstCallback);
 
 ```
 בדוגמה הבאה הצלחה : 
-```
+```js
 
 
 // נשתמש במודול הfs
@@ -286,7 +286,7 @@ fs.readFile(file, ErrorFirstCallback);
 * "פולט (Emitting) – שמות של אירועים .
 * רישום וביטול רישם של listening functions.
 
-```
+```js
 
 
 /**
