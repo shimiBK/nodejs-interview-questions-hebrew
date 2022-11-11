@@ -1,4 +1,4 @@
-# שאלות הכנה לראיון עבודה nodejs
+# שאלות הכנה לראיון עבודה nodejs אהבתם ? תנו ⭐
 
 
 ## ש. מה זה Node.JS ?
@@ -132,6 +132,7 @@ promise.
 
 ```
 1.Promises משמשים לטיפול אסניכרוני בevents.
+<br>
 2.Promises משמשים לטיפול בבקשות Http אסינכרוניות
 
 
@@ -358,9 +359,11 @@ status 200 and ok
 
 ת. REPL ראשי תיבות של Read , Eval , Print , Loop. זוהי סביבה כמו הwindows console או הLinux Shell שבה המשתמש מכניס פקודה , והקונסול מגיב בפלט.
 
-<div align="center>
+<div align="center">
+	
 ![image](https://user-images.githubusercontent.com/37695804/200756749-1326ad8d-9074-4713-ac8e-9919a02e3258.png)
-<div>
+	
+</div>
 
 ## ש. מהם Streams בNode.js ? 
 
@@ -372,3 +375,25 @@ status 200 and ok
 * **Transform** - סוג של Duplex  , כאשר הפלט מחושב לפי הקלט.
 
 
+## ש. הסבר את הקונספט של מודול הURL בNode.js ? 
+
+ת. מודול הURL בנוד מפצל כתובת למספר חלקים קריאים. על מנת לכלול את המודול יש להשתמש בrequire . על מנת לנתח את הכתובת יש להמתמש במטודה url.parse() , מתודה זו תחזיר אובייקט URL שהתכונות שלו הם כל חלק מכתובת. דוגמה :
+
+```js
+
+/**
+ * URL Module in Node.js
+ */
+const url = require('url');
+const adr = 'http://localhost:8080/default.htm?year=2022&month=september';
+const q = url.parse(adr, true);
+
+console.log(q.host); // localhost:8080
+console.log(q.pathname); // "/default.htm"
+console.log(q.search); // "?year=2022&month=september"
+
+const qdata = q.query; // { year: 2022, month: 'september' }
+console.log(qdata.month); // "september"
+
+
+```
