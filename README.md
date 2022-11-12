@@ -1,5 +1,21 @@
-# שאלות הכנה לראיון עבודה nodejs אהבתם ? תנו ⭐
+<div align="center">
+	
+# שאלות הכנה לראיון עבודה בNodeJS אהבתם ? תנו ⭐
+</div>
 
+<div dir="rtl">
+	
+| מספר      | שאלה |
+| ----------- | ----------- |
+| 1      | [מה זה Node.JS ?](#ש-מה-זה-nodejs-)       |
+| []()      | 2       |
+| []()      | 3       |
+| []()      | 4       |
+| []()      | 5       |
+| גשדגשגשדגש   | 2        |
+
+	
+</div>
 
 ## ש. מה זה Node.JS ?
 
@@ -373,6 +389,84 @@ status 200 and ok
 * **Writeable** - נועד כדי לכתוב אופרציות.
 * **Duplex** - משמש גם לקריאה וגם לכתיבה של אופרציותֿ.
 * **Transform** - סוג של Duplex  , כאשר הפלט מחושב לפי הקלט.
+
+קריאה מStream :
+```js
+const fs = require("fs");
+const data = '';
+
+//a. צור סטרים קריא
+const readerStream = fs.createReadStream('input.txt');
+
+// b.קבע את הקידוד להיות utf8 
+readerStream.setEncoding('UTF8');
+
+// c. טפל באירועים -> נתונים , סיום ושגיאות
+readerStream.on('data', function(chunk) {
+   data += chunk;
+});
+
+readerStream.on('end',function() {
+   console.log(data);
+});
+
+readerStream.on('error', function(err) {
+   console.log(err.stack);
+});
+
+console.log("Program Ended");
+
+```
+
+כתיבה לStream :
+```js
+const fs = require("fs");
+const data = 'Simply Easy Learning';
+
+// a. צור סטרים כתיב(writeable)
+const writerStream = fs.createWriteStream('output.txt');
+
+// b. כתוב את הנתונים בקידוד utf8
+writerStream.write(data,'UTF8');
+
+// c. סמן את סוף הקובץ
+writerStream.end();
+
+// Handle stream events --> finish, and error
+writerStream.on('finish', function() {
+   console.log("Write completed.");
+});
+
+writerStream.on('error', function(err) {
+   console.log(err.stack);
+});
+
+console.log("Program Ended");
+
+
+
+```
+הצנרה ( Piping ) של Streams :
+
+
+```js
+
+const fs = require("fs");
+
+// a. צור סטרים קריא
+const readerStream = fs.createReadStream('input.txt');
+
+// b. צור סטרים כתיב
+const writerStream = fs.createWriteStream('output.txt');
+
+// c. הצנר את פעולות הקריאה והכתיבה
+// d. קראת את input.txt וכתוב ל outout.txt
+readerStream.pipe(writerStream);
+
+console.log("Program Ended");
+
+
+```
 
 
 ## ש. הסבר את הקונספט של מודול הURL בNode.js ? 
