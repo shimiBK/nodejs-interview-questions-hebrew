@@ -18,10 +18,24 @@
 | 9   | [הסבר מה היא פונקציית callback ב Node.JS ?](#ש-הסבר-מה-היא-פונקציית-callback-ב-nodejs-) |
 | 10  | [הסבר מהו Promise ?](#ש-הסבר-מהו-promise-) |
 | 11  | [מהו Callback Hell ?](#ש-מהו-callback-hell-) |
-| 12  | []() |
-| 13  | []() |
-| 14  | []() |
-| 15    []() |
+| 12  | [מה היתרון של Promise על Callback ?](#ש-מה-היתרון-של-promise-על-callback-) |
+| 13  | [הסבר את הרעיון של Middleware ?](#ש-הסבר-את-הרעיון-של-middleware-) |
+| 15  | [מהו Express.js ולמה שנשתמש בו ?](#שמהו-expressjs-ולמה-שנשתמש-בו-) |
+| 16  |  [מהם סוגי בקשות הHTTP השונות ?](#ש-מהם-סוגי-בקשות-הhttp-השונות-) |
+| 17  |  [מה הוא ה Event Loop בNode.JS ?](#ש-מה-הוא-ה-event-loop-בnodejs-) |
+| 18  | [מהו error-first callback ב Node.js ?](#ש-מהו-error-first-callback-ב-nodejs-) |
+| 19  | [מהם המשתנים הגלובליים של Node.js?](d#ש-מהם-המשתנים-הגלובליים-של-nodejs) |
+| 20  | [מהם מודולי הליבה של Node.js?](#ש-מהם-מודולי-הליבה-של-nodejs) |
+| 21  |  [מהו הEvent Emitter ?](#שמהו-הevent-emitter-) |
+| 22  | [מהן שיטות הEventEmitter הקיימות בNode.js ?](#ש-מהן-שיטות-הeventemitter-הקיימות-בnodejs-) |
+| 23  |  [מהם מטודות התזמון (timing features) של Node.js ?](#ש-מהם-מטודות-התזמון-timing-features-של-nodejs-) |
+| 25  |  [הסבר מה זה fork ב Node.js ?](#ש-הסבר-מה-זה-fork-ב-nodejs-) |
+| 26  |  [האם ניתן לגשת ל DOM בנוד ?](#ש-האם-ניתן-לגשת-ל-dom-בנוד-) |
+| 27  |  [מה זה הREPL בNode.js ?](#ש-מה-זה-הrepl-בnodejs-) |
+| 28  | [מהם Streams בNode.js ?](#ש-מהם-streams-בnodejs-) |
+| 29  |  [הסבר את הקונספט של מודול הURL בNode.js ?](#ש-הסבר-את-הקונספט-של-מודול-הurl-בnodejs-) |
+| 30  |  [איך Node.js קורא תוכן של קובץ ?](d#ש-איך-nodejs-קורא-תוכן-של-קובץ-) |
+| 31  |  [איך מטפלים בנתונים גדולים בNode.js ?](#ש-איך-מטפלים-בנתונים-גדולים-בnodejs-) |
 
 
 
@@ -266,7 +280,7 @@ fs.readFile(file, ErrorFirstCallback);
 
 ```
 
-## ש. מהם האובייקטים הגלובליים של Node.js?
+## ש. מהם המשתנים הגלובליים של Node.js?
 
 ת.
 <br>
