@@ -183,6 +183,22 @@ promise.
 ת. מספר Callbacks מקוננים אחד מתחת לשני אשר יוצרים צורה של פירמידה , כל Callback תלוי/מחכה לCallback הקודם מה שגורם ליצרת פירמידה  כאמור, דבר המקשה על קריאות הקוד והיכולת לתחזק אותו.
 
 
+```js
+
+async1(function(){
+    async2(function(){
+        async3(function(){
+            async4(function(){
+                ....
+            });
+        });
+    });
+});
+
+
+
+```
+
 ## ש. מה היתרון של Promise על Callback ? 
 
 ת.Promise יכול להתמודד עם מספר פעולות אסינכרוניות בקלות , כמו כן הוא מספק טיפול טוב יותר בשגיאות (error handling). בשימוש בPromise אנחנו בעצם נמנעים מהCallback Hell.
